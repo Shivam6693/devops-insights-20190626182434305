@@ -1,0 +1,22 @@
+{
+  "name": "WeatherReport",
+  "version": "0.1.0",
+  "main": "app.js",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "angular-route": "~1.4.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.7"
+  },
+  "exportsOverride": {
+  }
+}

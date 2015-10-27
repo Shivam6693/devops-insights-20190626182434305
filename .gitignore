@@ -1,0 +1,12 @@
+bower_components/*
+node_modules/
+npm-debug.log
+coverage.json
+mochatest.json
+tests/coverage/*
+tests/client/coverage/
+static/bower_components/*
+static/built/*
+scripts/*.xml
+scripts/*.json
+tests/client/coverage

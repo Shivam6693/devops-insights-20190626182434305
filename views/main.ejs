@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+        <link rel="stylesheet" href="/built/css/default.css" />
+
+        <script src="/bower_components/angular/angular.js"></script>
+        <script src="/bower_components/angular-route/angular-route.js"></script>
+        <script src="/js/controllers.js"></script>
+    </head>
+
+    <body>
+        <div float="left">
+            <% include includes/mainbody %>
+        </div>
+    </body>
+
+    <script>
+         angular.element(document).ready(function() {
+            angular.bootstrap(document, ['ConsoleModule']);
+        });
+    </script>
+
+</html>

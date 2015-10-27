@@ -1,0 +1,237 @@
+/* CSS declarations go here */
+
+body {
+    margin: 0px;
+}
+
+.scontainer {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    background-color: #3b4b54;
+}
+
+.centered {
+    top: 20%;
+    width: 25em;
+    height:100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.north {
+    top: 10%;
+    width: 25em;
+    height:100px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.underline {
+    border-bottom: 1px solid #CCC;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 27em;
+    line-height: 1.5em;
+    float: left;
+    margin: 10px;
+    color: beige;
+}
+
+.headerText {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    width: 27em;
+    line-height: 1.5em;
+    float: left;
+    margin: 10px;
+    color: beige;
+}
+
+html{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    background-color:#3b4b54;
+}
+body{
+    margin: 0px;
+}
+.container{
+    border: 1px solid black;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:20px;
+    background-color:#ffffff;
+}
+.headerContainer{
+    padding: 20px;
+    border-bottom: 1px solid lightgrey;
+}
+.headerContainer select{
+    border:none;
+    -webkit-appearance: none;
+    background-color:#ebebeb;
+    border-radius: 0;
+    padding:10px 25px;
+
+
+
+
+    background-image: url("../../imagefiles/downArrow.png");
+    background-repeat: no-repeat;
+    background-position: 100%;
+}
+.bodyContainer {
+    /*content: "";
+    clear: both;*/
+    display: table;
+}
+.block{
+    display: table-cell !important;
+    vertical-align: top;
+    /*display: inline;
+    float: left;*/
+}
+.leftBlock{
+    width: auto;
+    min-height: 500px;
+
+
+    background-color: #eff2f5;
+}
+.rightBlock{
+    
+    padding-left: 40px;
+}
+.titleButton{
+    padding: 20px;
+    border-bottom: 1px solid #dee6ec;
+}
+.titleButtonSelected{
+    background-color: #dee6eb;
+}
+.titleButton img{
+    vertical-align: middle;
+}
+.testCaseRow{
+    width: 700px;
+
+    position: relative;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #ebebeb;
+}
+.testCaseRow .coverageRow{
+    margin: 0px
+}
+.testCaseRow > div{
+    width: 200px;
+    height: 20px;
+    float: right;
+}
+.graphDiv{
+    border: 1px solid black;
+    background-color: #FF6699;
+}
+.graphDiv > div{
+    height: 100%;
+    background-color: lightgreen;
+} 
+.stopImg{
+    width: 40px;
+    height: 40px;
+
+    position: absolute;
+    top:50%;
+    margin-top: -21px;
+}
+.testCaseRow span{
+    margin-left: 80px;
+}
+
+.drillDownTable{
+    display: table;
+}
+
+.drillDownTable > div{
+    display: table-row;
+}
+
+.drillDownTable .drillDownContent{
+    display: table-cell;
+    vertical-align: top;
+}
+
+.no-border{
+    border: none;
+}
+
+.flipArrowImg{
+    -webkit-transform: rotate(180deg); 
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+}
+
+
+.coverageRow{
+    width: 700px;
+
+    position: relative;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #ebebeb;
+}
+
+
+
+
+$black: #000;
+$steel_blue: steelblue;
+$white: #fff;
+
+//fonts
+$font_0: sans-serif;
+
+//@extend-elements
+//original selectors
+//.axis path, .axis line
+%extend_1 {
+	fill: none;
+	stroke: $black;
+	shape-rendering: crispEdges;
+}
+
+
+.axis {
+	path {
+		@extend %extend_1;
+	}
+	line {
+		@extend %extend_1;
+	}
+}
+.bar {
+	fill: $steel_blue;
+}
+.bartext {
+	font: 12px $font_0;
+	fill: $white;
+	text-align: center;
+}
+.graphtable {
+	font: 14px $font_0;
+	margin-left: 1.6cm;
+	text-align: center;
+	width: 80%;
+}
+td {
+	width: 100px;
+}
+.x.axis path {
+	display: none;
+}
