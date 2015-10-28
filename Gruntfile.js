@@ -55,11 +55,12 @@ module.exports = function (grunt) {
       		},
           'fvt': {
                options: {
-                 reporter: 'spec',
+                 reporter: 'json',
                  clearRequireCache: true,
                  colors: true,
                  quite: false,
-                 timeout: 60000
+                 timeout: 60000,
+                 captureFile: 'saucelabfvt.json'
               },
               src: ['tests/saucelabs/*.js']
           }
