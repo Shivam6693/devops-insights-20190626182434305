@@ -7,12 +7,10 @@
 	var By = require('selenium-webdriver').By;
 	var until = require('selenium-webdriver').until;
 	var assert = require('assert');
-	//var test = require('../../node_modules/selenium-webdriver/testing');
 	var sauceLabs = require('saucelabs');
     
 	var SAUCELABSURL = 'http://ondemand.saucelabs.com:80/wd/hub';
 	var DEMODRAURL = 'https://demodratest.mybluemix.net/#/';
-	//var http = require('https');
 
 	var driver = new webdriver.Builder().
         			usingServer(SAUCELABSURL).
@@ -23,24 +21,20 @@
         					name: 'Current Weather Report check',
         					tags: ["demodra"],
         					build: '1.1.0',
-        					//username: process.env.SAUCE_USERNAME,
-        					//accessKey: process.env.SAUCE_ACCESS_KEY
-        					username: 'uparulekar',
-        					accessKey: 'de548c54-b0ac-4204-83c2-29a0dec602bc'
+        					username: process.env.SAUCE_USERNAME,
+        					accessKey: process.env.SAUCE_ACCESS_KEY
     					}
     				).build();
 
   var saucelab = new sauceLabs({
-          //username: process.env.SAUCE_USERNAME,
-          //password: process.env.SAUCE_ACCESS_KEY
-          username: 'uparulekar',
-          password: 'de548c54-b0ac-4204-83c2-29a0dec602bc'
+          username: process.env.SAUCE_USERNAME,
+          password: process.env.SAUCE_ACCESS_KEY
         });
 
 	describe('Test current weather report', function() {
 
     before(function(done) {
-      driver.get('http://demodratest.mybluemix.net/#/');
+      driver.get(DEMODRAURL);
       done();
     });
 
