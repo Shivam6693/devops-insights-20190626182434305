@@ -10,7 +10,7 @@
     "request": "^2.65.0"
   },
   "engines": {
-    "node": "4.2.1"
+    "node": "0.12.7"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -22,6 +22,6 @@
     "grunt-sass": "^1.1.0",
     "mocha": "^2.3.3",
     "saucelabs": "^1.0.1",
-    "selenium-webdriver": "^2.48.0"
+    "selenium-webdriver": "2.47.0"
   }
 }
