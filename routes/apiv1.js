@@ -30,7 +30,9 @@ exports.getWeather = function(req, res) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' F';
     			var resp = {city: body.name, weather: weath}
     			return res.status(200).send(resp);
-    		}
+    		} else {
+                return res.status(400).send({msg:'Failed'});
+            }
     	}
     });
 

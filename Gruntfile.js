@@ -3,12 +3,6 @@ module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
-    env: {
-      test: {
-        MONGODB_REPLICASET: 'set-561298518024cab4af000ba9'
-      }
-    },
-
     bower: {
         install: {
             options: {
@@ -62,7 +56,7 @@ module.exports = function (grunt) {
                  timeout: 60000,
                  captureFile: 'saucelabfvt.json'
               },
-              src: ['tests/saucelabs/*.js']
+              src: ['tests/saucelab/*.js']
           }
     	},
 
@@ -197,18 +191,15 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-bower-installer');
     grunt.loadNpmTasks('grunt-mocha-test');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    //grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-jshint');
-    //grunt.loadNpmTasks('grunt-istanbul');
-    //grunt.loadNpmTasks('grunt-simple-mocha');
-    //grunt.loadNpmTasks('grunt-karma');
-    //grunt.loadNpmTasks('grunt-env');
+    grunt.loadNpmTasks('grunt-istanbul');
 
     grunt.registerTask('default', ['availabletasks']);
     grunt.registerTask('dev-lint', ['jshint:browser', 'jshint:server']);
     grunt.registerTask('dev-setup', ['clean:all', 'bower', 'sass:dist', 'jshint:browser']);
-    grunt.registerTask('dev-test', ['env:test', 'clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side-spec']);
-    grunt.registerTask('dev-test-cov', ['env:test', 'clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side', 'storeCoverage', 'makeReport']);
+    grunt.registerTask('dev-test', ['clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side-spec']);
+    grunt.registerTask('dev-test-cov', ['clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side', 'storeCoverage', 'makeReport']);
     grunt.registerTask('dev-uitest', ['mochaTest:fvt']);
 
 };

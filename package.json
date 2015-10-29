@@ -14,15 +14,20 @@
     "node": "4.2.1"
   },
   "devDependencies": {
+    "chai": "^3.4.0",
     "grunt": "^0.4.5",
     "grunt-available-tasks": "^0.6.1",
     "grunt-bower-installer": "^0.3.6",
     "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-copy": "^0.8.2",
     "grunt-contrib-jshint": "^0.11.3",
+    "grunt-istanbul": "^0.6.1",
     "grunt-mocha-test": "^0.12.7",
     "grunt-sass": "^1.1.0",
     "mocha": "^2.3.3",
+    "rewire": "^2.3.4",
     "saucelabs": "^1.0.1",
-    "selenium-webdriver": "2.44.0"
+    "selenium-webdriver": "2.44.0",
+    "supertest": "^1.1.0"
   }
 }
