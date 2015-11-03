@@ -39,16 +39,12 @@
     });
 
 		it("check report title", function(done) {
-      console.log("in title");
       driver.get(DEMODRAURL).then(function() {
-        console.log("after get");
-      driver.getTitle().then(function(title) {
-        console.log("after title");
-        assert.equal(title, 'DemoDRA - Current Weather');
-        done();
+        driver.getTitle().then(function(title) {
+          assert.equal(title, 'DemoDRA - Current Weather');
+          done();
+        });
       });
-      });
-      console.log("exiting");
     });
 
     it("Check for zip4 element", function(done) {
