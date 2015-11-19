@@ -1,0 +1,39 @@
+<div>
+    <div class="underline" style="float:left">Current Weather</div>
+    <div style="float:left; width:100%; padding-left:15px">
+      <div style="float:left; width:100%">
+      	<div id="zipcode" class="headerText" style="width:10em">Zip Code</div>
+      	<div id="location" class="headerText" style="width:10em">Location</div>
+      	<div id="weather" class="headerText">Weather</div>
+      </div>
+
+      <div style="float:left; width:100%">
+      	<div class="headerText" style="width:10em">
+      		<span><input id="zip1" type="text" ng-model="zip1m" ng-change="zip(1)"></span>
+      	</div>
+      	<div id="zip1city" class="underline" style="width:10em">&nbsp;{{zip1City}}</div>
+      	<div id="zip1weather" class="underline">&nbsp;{{zip1Weather}}</div>
+      </div>
+      <div style="float:left; width:100%">
+      	<div class="headerText" style="width:10em">
+      		<span><input id="zip2" type="text" ng-model="zip2m" ng-change="zip(2)"></span>
+      	</div>
+      	<div id="zip2city" class="underline" style="width:10em">&nbsp;{{zip2City}}</div>
+      	<div id="zip2weather" class="underline">&nbsp;{{zip2Weather}}</div>
+      </div>
+      <div style="float:left; width:100%">
+      	<div class="headerText" style="width:10em">
+      		<span><input id="zip3" type="text" ng-model="zip3m" ng-change="zip(3)"></span>
+      	</div>
+      	<div id="zip3city" class="underline" style="width:10em">&nbsp;{{zip3City}}</div>
+      	<div id="zip3weather" class="underline">&nbsp;{{zip3Weather}}</div>
+      </div>
+      <div style="float:left; width:100%">
+      	<div class="headerText" style="width:10em">
+      		<span><input id="zip44" type="text" ng-model="zip4m" ng-change="zip(4)"></span>
+      	</div>
+      	<div id="zip4city" class="underline" style="width:10em">&nbsp;{{zip4City}}</div>
+      	<div id="zip4weather" class="underline">&nbsp;{{zip4Weather}}</div>
+      </div>
+  	</div>
+</div>
