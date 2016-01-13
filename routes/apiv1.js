@@ -25,6 +25,22 @@ exports.getWeather = function(req, res) {
     	if(err) {
     		res.status(400).send('Failed to get the data');
     		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
+    		console.error("Failed to send request to openweathermap.org", err);
     	} else {
     		if(body.cod === 200) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' F';
