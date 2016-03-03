@@ -1,5 +1,4 @@
-﻿#!/bin/bash
-
+﻿
 jsondoc="{"
 while [[ $# > 1 ]]
 do
