@@ -29,7 +29,7 @@
 
     describe('Get Weather', function() {
 
-    	it('With missing zip code', function() {
+    	it('with without zip code', function() {
     		reqMock = {
 					query: {
 
@@ -41,7 +41,7 @@
         assert(resMock.status.lastCall.calledWith(400), 'Unexpected status code:' + resMock.status.lastCall.args);
     	});
 
-      it('With valid zip code and error from request call', function() {
+      it('with valid zip code and error from request call', function() {
         reqMock = {
           query: {
             zip: 79968
@@ -60,7 +60,7 @@
         assert(resMock.send.lastCall.calledWith('Failed to get the data'), 'Unexpected response:' + resMock.send.lastCall.args);
       });
 
-      it('With successful response and an empty body object', function() {
+      it('with incomplete zip code', function() {
         reqMock = {
           query: {
             zip: 79968
@@ -79,7 +79,7 @@
         assert(resMock.send.lastCall.args[0].msg === 'Failed', 'Unexpected response:' + resMock.send.lastCall.args);
       });
 
-      it('With successful response', function() {
+      it('with valid zip code', function() {
         reqMock = {
           query: {
             zip: 79968
@@ -116,7 +116,7 @@
     if(!process.env.FAKE_COVERAGE_REGRESSION){
 	    describe('Get Weather 2', function() {
 
-        it('With missing zip code', function() {
+        it('with without zip code', function() {
           reqMock = {
             query: {
 
@@ -128,7 +128,7 @@
           assert(resMock.status.lastCall.calledWith(400), 'Unexpected status code:' + resMock.status.lastCall.args);
         });
 
-        it('With valid zip code and error from request call', function() {
+        it('with valid zip code and error from request call', function() {
           reqMock = {
             query: {
               zip: 79968
@@ -147,7 +147,7 @@
           assert(resMock.send.lastCall.calledWith('Failed to get the data'), 'Unexpected response:' + resMock.send.lastCall.args);
         });
 
-        it('With successful response and an empty body object', function() {
+        it('with incomplete zip code', function() {
           reqMock = {
             query: {
               zip: 79968
@@ -166,7 +166,7 @@
           assert(resMock.send.lastCall.args[0].msg === 'Failed', 'Unexpected response:' + resMock.send.lastCall.args);
         });
 
-        it('With successful response', function() {
+        it('with valid zip code', function() {
           reqMock = {
             query: {
               zip: 79968
