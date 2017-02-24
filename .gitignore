@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log
 coverage.json
 mochatest.json
+mochafvt.json
 saucelabfvt.json
 tests/coverage/*
 tests/client/coverage/

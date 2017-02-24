@@ -24,12 +24,12 @@ exports.getWeather = function(req, res) {
     }, function(err, resp, body) {
     	if(err) {
     		res.status(400).send('Failed to get the data');
-    		console.error("Failed to send request to openweathermap.org", err);
+    		//console.error("Failed to send request to openweathermap.org", err);
     	} else {
     		if(body.cod === 200) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' F';
-    			var resp = {city: body.name, weather: weath}
-    			return res.status(200).send(resp);
+    			var response = {city: body.name, weather: weath};
+    			return res.status(200).send(response);
     		} else {
                 return res.status(400).send({msg:'Failed'});
             }
@@ -55,12 +55,12 @@ exports.getWeather2 = function(req, res) {
     }, function(err, resp, body) {
     	if(err) {
     		res.status(400).send('Failed to get the data');
-    		console.error("Failed to send request to openweathermap.org", err);
+    		//console.error("Failed to send request to openweathermap.org", err);
     	} else {
     		if(body.cod === 200) {
     			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' F';
-    			var resp = {city: body.name, weather: weath}
-    			return res.status(200).send(resp);
+    			var response = {city: body.name, weather: weath};
+    			return res.status(200).send(response);
     		} else {
                 return res.status(400).send({msg:'Failed'});
             }
