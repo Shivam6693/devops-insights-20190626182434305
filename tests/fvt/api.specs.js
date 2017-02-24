@@ -16,6 +16,10 @@
     describe('Get Weather', function() {
 
     	it('with valid zip code', function(done) {
+        if(!appUrl) {
+            assert.fail("Environment variable APP_URL is not defined");
+            done();
+        }
         request({
       		method: 'GET',
               url: appUrl + '/api/v1/getWeather?zip=78613'
@@ -32,6 +36,10 @@
     	});
 
       it('without zip code', function(done) {
+        if(!appUrl) {
+            assert.fail("Environment variable APP_URL is not defined");
+            return done();
+        }
         request({
       		method: 'GET',
               url: appUrl + '/api/v1/getWeather'
@@ -46,6 +54,10 @@
     	});
 
       it('with another valid zip code', function(done) {
+        if(!appUrl) {
+            assert.fail("Environment variable APP_URL is not defined");
+            return done();
+        }
         request({
       		method: 'GET',
               url: appUrl + '/api/v1/getWeather?zip=78641'
