@@ -47,7 +47,7 @@ module.exports = function (grunt) {
         		  },
         		  src: ['tests/client/report.spec.js']
       		},
-          'fvt': {
+          'saucelab-fvt': {
                options: {
                  reporter: 'json',
                  clearRequireCache: true,
@@ -57,6 +57,17 @@ module.exports = function (grunt) {
                  captureFile: 'saucelabfvt.json'
               },
               src: ['tests/saucelab/*.js']
+          },
+					'fvt': {
+               options: {
+                 reporter: 'json',
+                 clearRequireCache: true,
+                 colors: true,
+                 quite: false,
+                 timeout: 60000,
+                 captureFile: 'mochafvt.json'
+              },
+              src: ['tests/fvt/*.js']
           }
     	},
 
@@ -162,7 +173,7 @@ module.exports = function (grunt) {
               }
           }
       },
-	  
+
 	  simplemocha: {
             sauce: {
                 options: {
@@ -172,7 +183,7 @@ module.exports = function (grunt) {
                 src: ['tests/sauce/**/*-specs.js']
             }
         },
-        
+
         karma: {
             options: {
                 // point all tasks to karma config file
@@ -198,6 +209,7 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['availabletasks']);
     grunt.registerTask('dev-lint', ['jshint:browser', 'jshint:server']);
     grunt.registerTask('dev-setup', ['clean:all', 'bower', 'sass:dist', 'jshint:browser']);
+		grunt.registerTask('fvt-test', ['mochaTest:fvt']);
     grunt.registerTask('dev-test', ['clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side-spec']);
     grunt.registerTask('dev-test-cov', ['clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side', 'storeCoverage', 'makeReport']);
     grunt.registerTask('dev-uitest', ['mochaTest:fvt']);
