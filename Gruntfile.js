@@ -109,14 +109,20 @@ module.exports = function (grunt) {
     	},
 
     	makeReport: {
-      		  src: 'tests/coverage/reports/*.json',
-      		  options: {
-              //type: 'html',
-              type: 'json-summary',
-        		  dir: 'tests/coverage/reports',
-              file: 'coverage-summary.json'
-              //print: 'detail'
-      		  }
+          src: 'tests/coverage/reports/*.json',
+          options: {
+            type: 'json-summary',
+            dir: 'tests/coverage/reports',
+            file: 'coverage-summary.json'
+          }
+    	},
+
+      'makeReport-lcov': {
+          src: 'tests/coverage/reports/*.json',
+          options: {
+            type: 'lcov',
+            dir: 'tests/coverage/reports'
+          }
     	},
 
       sass: {
@@ -206,12 +212,15 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-istanbul');
 
+    grunt.renameTask('makeReport', 'makeReport-lcov');
+    grunt.loadNpmTasks('grunt-istanbul');
+
     grunt.registerTask('default', ['availabletasks']);
     grunt.registerTask('dev-lint', ['jshint:browser', 'jshint:server']);
     grunt.registerTask('dev-setup', ['clean:all', 'bower', 'sass:dist', 'jshint:browser']);
 		grunt.registerTask('fvt-test', ['mochaTest:fvt']);
     grunt.registerTask('dev-test', ['clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side-spec']);
-    grunt.registerTask('dev-test-cov', ['clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side', 'storeCoverage', 'makeReport']);
+    grunt.registerTask('dev-test-cov', ['clean:coverage', 'copy:resourcesForInstrumented', 'instrument', 'mochaTest:server-side', 'storeCoverage', 'makeReport-lcov', 'makeReport']);
     grunt.registerTask('dev-uitest', ['mochaTest:fvt']);
 
 };
