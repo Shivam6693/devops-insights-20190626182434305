@@ -21,11 +21,11 @@ module.exports = function (grunt) {
     	mochaTest: {
       		'server-side': {
         		  options: {
-          			 reporter: 'XUnit',
+          			 reporter: 'json',
           			 clearRequireCache: true,
           			 colors: true,
                  quite: true,
-                 captureFile: 'mochatest.xml'
+                 captureFile: 'mochatest.json'
         		  },
         		  src: ['tests/server/*.js']
       		},
@@ -60,12 +60,12 @@ module.exports = function (grunt) {
           },
 					'fvt': {
                options: {
-                 reporter: 'XUnit',
+                 reporter: 'json',
                  clearRequireCache: true,
                  colors: true,
                  quite: false,
                  timeout: 60000,
-                 captureFile: 'mochafvt.xml'
+                 captureFile: 'mochafvt.json'
               },
               src: ['tests/fvt/*.js']
           }
