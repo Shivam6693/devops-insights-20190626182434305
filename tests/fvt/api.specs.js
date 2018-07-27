@@ -29,7 +29,7 @@
           	} else {
               assert.equal(resp.statusCode, 200);
               var pbody = JSON.parse(body);
-              assert(((pbody.city === 'Anderson Mill') || (pbody.city === 'Cedar Park')), "City name does not match");
+              assert((pbody.city === 'Anderson Mill') || (pbody.city === 'Round Rock'), "City name does not match");
               done();
             }
         });
@@ -43,7 +43,7 @@
         request({
       		method: 'GET',
               url: appUrl + '/api/v1/getWeather'
-          }, function(err, resp, body) {
+          }, /* @callback */ function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
           	} else {
@@ -67,10 +67,10 @@
           	} else {
               assert.equal(resp.statusCode, 200);
               var pbody = JSON.parse(body);
-              assert((pbody.city === 'Leander'), "City name does not match");
+              assert(pbody.city === 'Round Rock', "City name does not match");
               done();
             }
         });
     	});
     });
-}());
+})();
