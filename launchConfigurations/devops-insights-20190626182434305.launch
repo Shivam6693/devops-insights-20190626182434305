@@ -1,0 +1,25 @@
+{
+	"Params": {
+		"DevMode": {
+			"Instrumentation": {
+				"command": "",
+				"env": {
+					"BLUEMIX_APP_MGMT_ENABLE": "devconsole",
+					"NODE_ENV": "development"
+				},
+				"memory": "384M"
+			},
+			"Packager": "com.ibm.perfectstorm.cloudoe.packager.LiveEditDeploymentPackager"
+		},
+		"Name": "devops-insights-20190626182434305",
+		"Target": {
+			"Url": "https://api.ng.bluemix.net",
+			"Org": "raj.solanki23@gmail.com",
+			"Space": "dev"
+		},
+		"Timeout": 60
+	},
+	"Path": "",
+	"ServiceId": "com.ibm.cloudoe.orion.client.deploy",
+	"Type": "Cloud Foundry"
+}
